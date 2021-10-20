@@ -147,7 +147,6 @@ section{
 .projects-section {
   color: #b0c4de;
   font-family: 'DM Serif Display';
-  //background-color: #d3d3d3;
   background-color: #f0f8ff;
   text-align:center;
   padding: 5rem 10rem;
@@ -183,7 +182,6 @@ section{
 .project-tile{
   padding: 15px;
   justify-content:center;
-  //margin: 25px 100px 25px 100px;
   margin:auto;
   text-decoration: none;
   background-color: black;
@@ -207,9 +205,8 @@ section{
   font-weight: 600;
 }
 .contact-section {
-  color: #black;
+  color: black;
   font-family: 'DM Serif Display';
-  //background-color: #e88e5a;
   background-color: #deb887;
   text-align:center;
   padding: 5rem 10rem;
