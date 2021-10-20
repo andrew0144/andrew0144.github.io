@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500;600&family=Quicksand:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500;600&family=Quicksand:wght@400;500;600&family=Slabo+27px&display=swap');
+
+/* Custom properties/variables  */
+:root {
+  --main-white: #f0f0f0;
+  --main-red: #be3144;
+  --main-blue: #45567d;
+  --main-gray: #303841;
+}
+
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* box-sizing and font sizing */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  
+}
+
+/* 1200px / 16px = 75em */
+@media (max-width: 75em) {
+  html {
+    font-size: 60%;
+  }
+}
+
+/* 980px / 16px = 61.25em */
+@media (max-width: 61.25em) {
+  html {
+    font-size: 58%;
+  }
+}
+
+/* 460px / 16px = 28.75em */
+@media (max-width: 28.75em) {
+  html {
+    font-size: 55%;
+  }
+}
+body {
+  font-family:  'Noto Sans Mono';
+  font-size: 1.8rem; /* 18px */
+  font-weight: 600;
+  line-height: 1.4;
+  background-color: black;
+}
+h1,
+h2 {
+  font-family: 'DM Serif Display', sans-serif;
+  color: black;
+  font-weight: 700;
+  text-align: center;
+}
+nav{
+  font-family: 'DM Serif Display', sans-serif;
+  font-weight: 600;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background-color: black;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 10;
+}
+#name{
+  align-self: center;
+  text-align: left;
+  background-color: white;
+  color: #b0c4de;
+  display:none;
+}
+nav a{
+  text-decoration: none;
+  position:relative;
+  color: #b0c4de;
+  font-size: 2.2rem;
+  padding: 20px;
+  letter-spacing: 1.5px;
+}
+nav a:hover{
+  background: rgb(156,172,217);
+background: linear-gradient(0deg, rgba(156,172,217,1) 0%, rgba(0,0,0,1) 100%);
+  color: white;
+}
+nav a:after {
+  border-radius: 1em;
+  border-top: .1em solid white;
+  content: "";
+  position: absolute;
+    right: 100%;
+    bottom: .14em;
+    left: 0;
+  transition: right .4s cubic-bezier(0,.5,0,1);
+}
+
+.nav a:hover:after {
+  right: 0;
+}
+.nav-list{
+  padding:10px 0px;
+  display: flex;
+  list-style: none;
+}
+
+#welcome-section h1 {
+  font-size: 6rem;
+  margin-top: 35vh;
+}
+
+h2 {
+  font-size: 4.2rem;
+}
+section{
+  background-color: #b0c4de;
+}
+#welcome-section{
+  padding-top: 25px;
+  height: 100vh;
+}
+#welcome-section p{
+  text-align: center;
+  margin-top: 15px;
+  font-family: 'Noto Sans Mono';
+  letter-spacing: 0.1em;
+  padding-bottom: 30px;
+} 
+.projects-section {
+  color: #b0c4de;
+  font-family: 'DM Serif Display';
+  //background-color: #d3d3d3;
+  background-color: #f0f8ff;
+  text-align:center;
+  padding: 5rem 10rem;
+}
+#projects h2{
+  margin-bottom: 50px;
+}
+#projects p{
+  margin-top: 5px;
+}
+/* "Automagic" image grid using no media queries */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 4rem;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+}
+
+@media (max-width: 30.625em) {
+  .projects-section {
+    padding: 6rem 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-tile{
+  padding: 15px;
+  justify-content:center;
+  //margin: 25px 100px 25px 100px;
+  margin:auto;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+.project-tile:hover{
+    background-color: #b0c4de;
+    -webkit-transition: background-color 250ms linear;
+    -ms-transition: background-color 250ms linear;
+    transition: background-color 250ms linear;
+    box-shadow: 5px 5px 10px black;
+    color: black;
+}
+.project-img{
+  margin-top:7.5px;
+  margin-bottom: 7.5px;
+}
+.project-title{
+  font-family: 'Noto Sans Mono';
+  font-weight: 600;
+}
+.contact-section {
+  color: #black;
+  font-family: 'DM Serif Display';
+  //background-color: #e88e5a;
+  background-color: #deb887;
+  text-align:center;
+  padding: 5rem 10rem;
+}
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 40vh;
+  padding: 0 2rem;
+}
+.contact-details{
+  text-decoration: none;
+  font-size: 1.5em;
+  color: black;
+  letter-spacing:1px;
+  position:relative;
+}
+.contact-details:after {
+  border-radius: 1em;
+  border-top: .1em solid white;
+  content: "";
+  position: absolute;
+    right: 100%;
+    bottom: .14em;
+    left: 0;
+  transition: right .4s cubic-bezier(0,.5,0,1);
+}
+
+.contact-details:hover:after {
+  right: 0;
+}
+
+
+.contact-links {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  max-width: 980px;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+.contact-section p{
+  margin-top:15px;
+  margin-bottom: 5px;
+}
+#technical-doc{
+  width: 75%;
+  height: auto;
+}
