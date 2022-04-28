@@ -256,7 +256,7 @@ section{
   margin-top:15px;
   margin-bottom: 5px;
 }
-#technical-doc{
+#technical-doc, #wellness-journal{
   width: 75%;
   height: auto;
 }
